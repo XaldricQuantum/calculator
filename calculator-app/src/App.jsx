@@ -5,15 +5,20 @@ import Keypad from './keypad.jsx'
 import './App.css'
 
 function App() {
-  const [currentValue, setCurrentValue] = useState(0);
-  const [operator, setOperator] = useState("")
-  const [displayValue, setDisplayValue] =useState(0)
+  // const [currentValue, setCurrentValue] = useState("");
+  // const [operator, setOperator] = useState([])
+  // const [displayValue, setDisplayValue] =useState([])
+
+  const [state, setState] = useState({
+    currentValue: "0",
+    displayValue: []
+  })
 
   return (
     
       <div className='wrapper-container'>
-      <Display />
-      <Keypad />
+      <Display state={state} setState={setState} />
+      <Keypad state={state} setState={setState} />
       </div>
     
   )

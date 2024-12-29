@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Domine:wght@400..700&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Press+Start+2P&family=Slabo+27px&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +20,20 @@ body {
 }
 
 .result-display, .current-display {
+  display: flex;
+  align-items: center;
+  justify-content: end;
   height: 30px;
   width: 100%;
   background-color: rgb(3, 4, 71);
+  color: rgb(129, 195, 253);
+  font-size: 1.2rem;
+  padding-right: 5px;
+  /* border: 1px solid white; */
+  font-family: "Orbitron", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
 }
 
 .key-pad {
@@ -45,6 +58,10 @@ body {
   height: 100%;
   border: none;
   margin: 0;
+}
+
+.ac-button:hover, .operator:hover, .number:hover, .equal:hover {
+  outline: 2px solid rgba(121, 171, 231, 0.795);
 }
 
 .ac-button {

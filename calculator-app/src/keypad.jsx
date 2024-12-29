@@ -1,6 +1,21 @@
 
 
-function Keypad () {
+function Keypad (props) {
+
+    const numbers = {
+        zero: "0",
+        one: "1",
+        two: "2",
+        three: "3",
+        four: "4",
+        five: "5",
+        six: "6",
+        seven: "7",
+        eight: "8",
+        nine: "9"
+    }
+
+    const updateCurrentNumber = (num) => props.setState((prevState) => ({...prevState, currentValue: prevState.currentValue + num }))
 
     const handleClear = () => {
         console.log("clear");
@@ -8,17 +23,38 @@ function Keypad () {
     };
 
     const handleNumber = (event) => {
-        console.log(event);
+        let numberId = event.currentTarget.id;
+        console.log(numberId);
+        let number = numbers[numberId];
+        console.log(number);
+        if (parseInt(props.state.currentValue) === 0) {
+
+            if (parseInt(number) === 0) {
+            console.log("inside if")
+            return
+            } else {
+                props.setState((state) => ({...state, currentValue: number}))
+            }
+        } else {
+            updateCurrentNumber(numbers[numberId])
+        }
+        
+        console.log((() => props.state.currentValue)());
+        
+
         
     };
 
     const handleOperator = (event) => {
-        console.log(event.target.id);
+        console.log(event.currentTarget.id);
         
     };
 
     const handEqual = (event) => {
-        console.log(event.target.id);
+        console.log(event.currentTarget.id);
+
+        console.log(eval("11*-9+9-8"));
+        // props.
         
     }
 
