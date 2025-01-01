@@ -11,7 +11,8 @@ function App() {
 
   const [state, setState] = useState({
     currentValue: "0",
-    displayValue: []
+    displayValue: [],
+    lastClicked: ""
   })
 
   return (
